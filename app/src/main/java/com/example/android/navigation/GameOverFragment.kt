@@ -31,10 +31,16 @@ class GameOverFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_over, container, false)
+//        var mediaPlayer = MediaPlayer.create(context, R.raw.join)
+//        mediaPlayer.start()
 
-        binding.tryAgainButton.setOnClickListener{view: View->
+//        binding.tryAgainButton.setOnClickListener{view: View->
+//            view.findNavController()
+//                    .navigate(R.id.action_gameOverFragment_to_gameFragment)}
+        binding.tryAgainButton.setOnClickListener { view: View ->
             view.findNavController()
-                    .navigate(R.id.action_gameOverFragment_to_gameFragment)}
+                    .navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
+        }
         return binding.root
     }
 }
